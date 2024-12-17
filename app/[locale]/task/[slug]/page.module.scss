@@ -1,0 +1,70 @@
+@import '/app/[locale]/globals/mixins';
+
+.page{
+	min-height: 1px;
+	flex: 100% 1 1;
+	@include devices(sm){
+		min-height: 200vh;
+		flex: 200vh 1 1;
+	}
+	&-panel{
+		margin: 8px;
+		border-radius: 4px;
+		background-color: var(--input-color);
+		height: calc(100% - 16px);
+		box-shadow: 0 0 10px var(--shadow-color);
+		display: flex;
+		flex-direction: column;
+		overflow: hidden;
+		&-header{
+			padding: 4px 8px;
+			border-bottom: 1px solid var(--border-color);
+			background: var(--hover-bg-color);
+		}
+		&-body{
+			padding: 4px 8px;
+			overflow: auto;
+			flex: 100% 1 1;
+			&.task_description{
+				h2{
+					margin-bottom: 12px;
+				}
+				p{
+					margin-bottom: 8px;
+				}
+			}
+		}
+		&-code_editor{
+			display: flex;
+			flex-direction: column;
+			overflow: hidden;
+			padding: 0;
+			&-toolbar{
+				padding: 0 8px;
+			}
+			&-footer{
+				padding: 2px 8px 4px 8px;
+			}
+			&-editor{
+				min-height: 1px;
+				flex: 100% 1 1;
+			}
+		}
+	}
+}
+
+.result{
+	&_success{
+		h2{
+			color: var(--success-color);
+		}
+	}
+	&_error{
+		h2{
+			color: var(--error-color);
+		}
+	}
+	&_message{
+		font-size: 15px;
+	}
+}
